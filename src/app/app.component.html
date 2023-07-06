@@ -1,8 +1,22 @@
-<app-favorite
-  [isFavorit]="post.isFavorite"
-  (change)="onFavoriteChange($event)"
-></app-favorite>
-<app-likes
-  [likesCount]="tweet.likesCount"
-  [isActive]="tweet.isLiked"
-></app-likes>
+<div>
+  <app-header></app-header>
+  
+
+  <div [ngSwitch]="role">
+    <div *ngSwitchCase="'User'">
+      <app-favorite
+        [isFavorit]="post.isFavorite"
+        (change)="onFavoriteChange($event)"
+      ></app-favorite>
+      <app-likes
+        [likesCount]="tweet.likesCount"
+        [isActive]="tweet.isLiked"
+      ></app-likes>
+     
+    </div>
+    <div *ngSwitchCase="'Admin'">
+    </div>
+    <div *ngSwitchDefault></div>
+  </div> <input type="text" appInputFormat="'uppercase'"/>
+  <!-- <app-footer></app-footer> -->
+</div>

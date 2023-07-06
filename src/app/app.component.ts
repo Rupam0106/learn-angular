@@ -13,11 +13,11 @@ export class AppComponent {
     isFavorite: true,
   };
 
-  tweet={
-    body:"...",
-    likesCount:11,
-    isLiked:true
-  }
-
+  tweet = {
+    body: '...',
+    likesCount: 11,
+    isLiked: true,
+  };
+  role = 'Users';
   onFavoriteChange(event: boolean) {}
 }
