@@ -1,0 +1,78 @@
+<div class="container d-flex justify-content-between flex-column p-4">
+  <h1>Reactive-form</h1>
+  <div>
+    <form
+      #formData="ngForm"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit(formData.value)"
+    >
+      <div class="form-group p-1">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          name="username"
+          required
+          minlength="4"
+          pattern="[a-zA-z]+$"
+          class="form-control"
+          formControlName="password"
+        />
+        <div
+          *ngIf="form.get('name').dirty && (username.dirty || username.touched)"
+          style="color: red"
+        >
+          Only valid Username is required.
+          <div *ngIf="form.get('name').errors?.['required']" style="color: red">
+            Username is required.
+          </div>
+          <div *ngIf="form.get('name').errors?.['minlength']" style="color: red">
+            Username must be at least 4 characters long.
+          </div>
+          <div
+            *ngIf="form.get('name').errors?.['cannotContainSpace']"
+            style="color: red"
+          >
+            Username cannot cantain space
+          </div>
+        </div>
+      </div>
+      <div class="form-group p-1">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          required
+          minlength="4"
+          class="form-control"
+          ngModel
+          #password="ngModel"
+        />
+        <div
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          style="color: red"
+        >
+          Only valid Password is required.
+          <div *ngIf="password.errors?.['required']" style="color: red">
+            password is required.
+          </div>
+          <div *ngIf="password.errors?.['minlength']" style="color: red">
+            password must be at least 4 characters long.
+          </div>
+          <div
+            *ngIf="password.errors?.['cannotContainSpace']"
+            style="color: red"
+          >
+            Password cannot cantain space
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-primary mx-2"
+        [disabled]="!form.valid"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { CourseComponent } from './course/course.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     component: ContactComponent,
     path: 'contact',
+  },
+  {
+    component: ReactiveFormComponent,
+    path: 'reactive-form',
   },
 ];
 

@@ -14,7 +14,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,9 @@ import { FormsModule } from '@angular/forms';
     HighlightDirective,
     ZippyComponent,
     ContactComponent,
+    ReactiveFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,FormsModule],
+  imports: [BrowserModule, AppRoutingModule,FormsModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
