@@ -1,0 +1,66 @@
+<div class="container d-flex justify-content-between flex-column p-4">
+  <h1>Contact Us</h1>
+  <div>
+    <form #formData="ngForm" (ngSubmit)="onSubmit(formData.value)">
+      <div class="form-group p-1">
+        <label for="firstName">First Name</label>
+        <input
+          id="firstName"
+          name="firstName"
+          required
+          ppForbiddenName="bob"
+          minlength="4"
+          pattern="[a-zA-z]+$"
+          class="form-control"
+          ngModel
+          #firstName="ngModel"
+        />
+        <div
+          *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+          style="color: red"
+        >
+          Only valid Name is required.
+          <div *ngIf="firstName.errors?.['required']" style="color: red">
+            Name is required.
+          </div>
+          <div *ngIf="firstName.errors?.['minlength']" style="color: red">
+            Name must be at least 4 characters long.
+          </div>
+          <div *ngIf="firstName.errors?.['forbiddenName']" style="color: red">
+            Name cannot be Bob.
+          </div>
+        </div>
+      </div>
+      <div class="form-group p-1">
+        <label for="comment"> Comment</label>
+        <textarea
+          ngModel
+          name="comment"
+          id="comment"
+          cols="30"
+          rows="10"
+          required
+          ppForbiddenName="bob"
+          minlength="4"
+          class="form-control"
+          #comment="ngModel"
+        ></textarea>
+        <div
+          *ngIf="comment.invalid && (comment.dirty || comment.touched)"
+          class="alert"
+        >
+          <div *ngIf="comment.errors?.['required']" style="color: red">
+            comment is required.
+          </div>
+          <div *ngIf="comment.errors?.['minlength']" style="color: red">
+            comment must be at least 4 characters long.
+          </div>
+          <div *ngIf="comment.errors?.['forbiddenName']" style="color: red">
+            comment cannot be Bob.
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary mx-2" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

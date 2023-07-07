@@ -11,6 +11,10 @@ import { FooterComponent } from './footer/footer.component';
 import { InputFormatDirective } from './directives/input-format.directive';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,8 +27,11 @@ import { AboutComponent } from './pages/about/about.component';
     InputFormatDirective,
     HomeComponent,
     AboutComponent,
+    HighlightDirective,
+    ZippyComponent,
+    ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

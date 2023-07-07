@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learn-angular';
-
+  color = '';
+  convert = 'lowercase';
   post = {
     title: 'title',
     isFavorite: true,
