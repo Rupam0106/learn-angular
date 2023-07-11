@@ -11,15 +11,18 @@ import { PasswordValidators } from './password.validators';
 export class ChangePasswordComponent {
   form;
   constructor(fb: FormBuilder) {
-    this.form = fb.group({
-      oldPassword: ['', Validators.required, PasswordValidators.validPassword],
-      newPassword: ['', Validators.required],
-      confirmPassword: [
-        '',
-        Validators.required,
-        PasswordValidators.passwordShouldMatch,
-      ],
-    });
+    this.form = fb.group(
+      {
+        oldPassword: [
+          '',
+          Validators.required,
+          PasswordValidators.validPassword,
+        ],
+        newPassword: ['', Validators.required],
+        confirmPassword: ['', Validators.required, ,],
+      },
+      { validators: PasswordValidators.passwordShouldMatch }
+    );
   }
 
   onSubmit(data: ChangePassword) {

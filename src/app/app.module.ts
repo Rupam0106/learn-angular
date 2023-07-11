@@ -18,7 +18,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { TodoComponent } from './todo/todo.component';
+import { CrudComponent } from './crud/crud.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './services/post.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
+import { provideToastr } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +43,18 @@ import { TodoComponent } from './todo/todo.component';
     ReactiveFormComponent,
     ChangePasswordComponent,
     TodoComponent,
+    CrudComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,FormsModule,ReactiveFormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [PostService, provideAnimations(), provideToastr()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

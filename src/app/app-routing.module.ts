@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TodoComponent } from './todo/todo.component';
+import { CrudComponent } from './crud/crud.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     component: TodoComponent,
     path: 'todo',
+  },
+  {
+    component: CrudComponent,
+    path: 'crud',
   },
 ];
 
