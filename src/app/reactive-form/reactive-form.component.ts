@@ -17,7 +17,15 @@ export class ReactiveFormComponent {
     password: new FormControl('', [Validators.required]),
   });
 
-  onSubmit(data: any) {
+  onSubmit(data: string) {
     console.log(data);
   }
+
+  // get user(){
+  //  return this.form.get('username')
+  // }
+
+  // get password(){
+  //   return this.form.get('password')
+  //  }
 }

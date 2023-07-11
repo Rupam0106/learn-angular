@@ -16,6 +16,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ZippyComponent,
     ContactComponent,
     ReactiveFormComponent,
+    ChangePasswordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,ReactiveFormsModule],
   providers: [],

@@ -13,24 +13,32 @@
           name="username"
           required
           minlength="4"
-          pattern="[a-zA-z]+$"
           class="form-control"
-          formControlName="password"
+          formControlName="username"
         />
         <div
-          *ngIf="form.get('name').dirty && (username.dirty || username.touched)"
-          style="color: red"
+          *ngIf="
+            form.get('username')?.dirty &&
+            (form.get('username')?.dirty || form.get('username')?.touched)
+          "
+          class="alert alert-danger"
         >
-          Only valid Username is required.
-          <div *ngIf="form.get('name').errors?.['required']" style="color: red">
+          Please Enter Valid Username
+          <div
+            *ngIf="form.get('username')?.errors?.['required']"
+            class="alert alert-danger"
+          >
             Username is required.
           </div>
-          <div *ngIf="form.get('name').errors?.['minlength']" style="color: red">
+          <div
+            *ngIf="form.get('username')?.errors?.['minlength']"
+            class="alert alert-danger"
+          >
             Username must be at least 4 characters long.
           </div>
           <div
-            *ngIf="form.get('name').errors?.['cannotContainSpace']"
-            style="color: red"
+            *ngIf="form.get('username')?.errors?.['cannotContainSpace']"
+            class="alert alert-danger"
           >
             Username cannot cantain space
           </div>
@@ -40,39 +48,41 @@
         <label for="password">Password</label>
         <input
           id="password"
-          name="password"
+          
           required
           minlength="4"
           class="form-control"
-          ngModel
-          #password="ngModel"
+          formControlName="password"
         />
         <div
-          *ngIf="password.invalid && (password.dirty || password.touched)"
-          style="color: red"
+          *ngIf="
+            form.get('password')?.invalid &&
+            (form.get('password')?.dirty || form.get('password')?.touched)
+          "
+          class="alert alert-danger"
         >
           Only valid Password is required.
-          <div *ngIf="password.errors?.['required']" style="color: red">
+          <div
+            *ngIf="form.get('password')?.errors?.['required']"
+            class="alert alert-danger"
+          >
             password is required.
           </div>
-          <div *ngIf="password.errors?.['minlength']" style="color: red">
+          <div
+            *ngIf="form.get('password')?.errors?.['minlength']"
+            class="alert alert-danger"
+          >
             password must be at least 4 characters long.
           </div>
           <div
-            *ngIf="password.errors?.['cannotContainSpace']"
-            style="color: red"
+            *ngIf="form.get('password')?.errors?.['cannotContainSpace']"
+            class="alert alert-danger"
           >
             Password cannot cantain space
           </div>
         </div>
       </div>
-      <button
-        class="btn btn-primary mx-2"
-        [disabled]="!form.valid"
-        type="submit"
-      >
-        Submit
-      </button>
+      <button class="btn btn-primary mx-2" type="submit">Submit</button>
     </form>
   </div>
 </div>

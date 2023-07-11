@@ -1,3 +1,4 @@
+import { ChangePasswordComponent } from './change-password/change-password.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     component: ReactiveFormComponent,
     path: 'reactive-form',
+  },
+  {
+    component: ChangePasswordComponent,
+    path: 'change-password',
   },
 ];
 
