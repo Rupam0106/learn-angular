@@ -17,6 +17,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     ContactComponent,
     ReactiveFormComponent,
     ChangePasswordComponent,
+    TodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,ReactiveFormsModule],
   providers: [],

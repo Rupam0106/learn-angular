@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     component: ChangePasswordComponent,
     path: 'change-password',
+  },
+  {
+    component: TodoComponent,
+    path: 'todo',
   },
 ];
 
