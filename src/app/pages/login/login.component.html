@@ -1,0 +1,82 @@
+<div class="container d-flex justify-content-center flex-column p-4">
+  <h1>Login</h1>
+  <div class="container">
+    <form
+      #formData="ngForm"
+      [formGroup]="form"
+      (ngSubmit)="onLogin(formData.value)"
+    >
+      <div class="form-group p-1">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          required
+          minlength="4"
+          class="form-control"
+          formControlName="email"
+        />
+        <div
+          *ngIf="
+            form.get('email')?.invalid &&
+            (form.get('email')?.dirty || form.get('email')?.touched)
+          "
+          class="alert alert-danger"
+        >
+          username should be valid.
+          <div
+            *ngIf="form.get('email')?.errors?.['email']"
+            class="alert alert-danger"
+          >
+            email is required.
+          </div>
+          <div
+            *ngIf="form.get('email')?.errors?.['minlength']"
+            class="alert alert-danger"
+          >
+            email must be at least 4 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="form-group p-1">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          minlength="4"
+          class="form-control"
+          formControlName="password"
+        />
+        <div
+          *ngIf="
+            form.get('password')?.invalid &&
+            (form.get('password')?.dirty || form.get('password')?.touched)
+          "
+          class="alert alert-danger"
+        >
+          Password should be valid.
+          <div
+            *ngIf="form.get('password')?.errors?.['required']"
+            class="alert alert-danger"
+          >
+            password is required.
+          </div>
+          <div
+            *ngIf="form.get('password')?.errors?.['minlength']"
+            class="alert alert-danger"
+          >
+            password must be at least 4 characters long.
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-primary mx-2"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

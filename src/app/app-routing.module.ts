@@ -10,6 +10,8 @@ import { TodoComponent } from './todo/todo.component';
 import { CrudComponent } from './crud/crud.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateComponent } from './crud/update/update.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -47,6 +49,14 @@ const routes: Routes = [
   {
     component: UpdateComponent,
     path: 'crud/:id',
+  },
+  {
+    component: LoginComponent,
+    path: 'login',
+  },
+  {
+    component: LogoutComponent,
+    path: 'logout',
   },
   {
     component: NotFoundComponent,
