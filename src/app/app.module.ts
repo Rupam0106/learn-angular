@@ -26,6 +26,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { provideToastr } from 'ngx-toastr';
 import { ToastrModule } from 'ngx-toastr';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { UpdateComponent } from './crud/update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,8 @@ import { ToastrModule } from 'ngx-toastr';
     ChangePasswordComponent,
     TodoComponent,
     CrudComponent,
+    NotFoundComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

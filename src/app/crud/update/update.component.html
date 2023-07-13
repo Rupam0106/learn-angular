@@ -1,0 +1,88 @@
+<div class="container d-flex justify-content-between flex-column p-4">
+  <h1>Update the detalis</h1>
+  <form
+    #formData="ngForm"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(formData.value)"
+   
+  >
+    <div class="p-2 m-2">
+      <label for="id">Id</label
+      ><input
+        type="text"
+        id="validId"
+        required
+        value="validId.value"
+        name="validId"
+        placeholder="Enter Id"
+        class="form-control"
+        formControlName="validId"
+      />
+      <div
+        *ngIf="validId?.invalid && (validId?.dirty || validId?.touched)"
+        class="alert alert-danger"
+      >
+        ID should be valid.
+        <div *ngIf="validId?.errors?.['required']" class="alert alert-danger">
+          ID is required.
+        </div>
+        <div *ngIf="validId?.errors?.['minlength']" class="alert alert-danger">
+          ID should be minimu 1 digit
+        </div>
+      </div>
+    </div>
+    <div class="p-2 m-2">
+      <label for="title">Title</label
+      ><input
+        id="title"
+        type="text"
+        required
+        minlength="4"
+        name="title"
+        placeholder="Enter Title"
+        class="form-control"
+        formControlName="title"
+      />
+      <div
+        *ngIf="title?.invalid && (title?.dirty || title?.touched)"
+        class="alert alert-danger"
+      >
+        title should be valid.
+        <div *ngIf="title?.errors?.['required']" class="alert alert-danger">
+          title is required.
+        </div>
+        <div *ngIf="title?.errors?.['minlength']" class="alert alert-danger">
+          title should be minimu 4 digit
+        </div>
+      </div>
+    </div>
+    <div class="p-2 m-2">
+      <label for="body">Body</label
+      ><input
+        type="text"
+        id="body"
+        name="body"
+        required
+        minlength="4"
+        placeholder="Enter Body "
+        class="form-control"
+        formControlName="body"
+      />
+      <div
+        *ngIf="body?.invalid && (body?.dirty || body?.touched)"
+        class="alert alert-danger"
+      >
+        Body should be valid.
+        <div *ngIf="body?.errors?.['required']" class="alert alert-danger">
+          Body is required.
+        </div>
+        <div *ngIf="body?.errors?.['minlength']" class="alert alert-danger">
+          Body should be minimu 4 digit
+        </div>
+      </div>
+    </div>
+    <div class="p-2">
+      <button class="btn btn-info" type="submit">Update</button>
+    </div>
+  </form>
+</div>

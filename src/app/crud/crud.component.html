@@ -1,11 +1,26 @@
-<input type="text" (keyup)="createPost(title)" #title />
-
-<ul class="list-group">
-  <li class="list-group-item container" *ngFor="let post of posts">
-    <div class="row">
-      <div class="col-sm">
-        {{ post.title }}
-        <button class="btn btn-info m-2" (click)="updatePost(post)">
+<div class="d-flex justify-content-center p-4">
+  <input
+    class="border border-info rounded p-3 d-flex justify-content-center"
+    type="text"
+    placeholder="Enter The title and hit enter"
+    (keyup.enter)="createPost(title)"
+    #title
+  />
+</div>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-sm p-4" *ngFor="let post of posts">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <p class="card-text"><strong>ID:-</strong>{{ post.id }}</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><strong>Title:-</strong>{{ post.title }}</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><strong>Body:-</strong>{{ post.body }}</p>
+        </div>
+        <button class="btn btn-info mb-2" (click)="updatePost(post)">
           Update
         </button>
         <button class="btn btn-danger" (click)="deletePost(post)">
@@ -13,5 +28,5 @@
         </button>
       </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>

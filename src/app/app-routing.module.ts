@@ -1,7 +1,6 @@
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FavoriteComponent } from './favorite/favorite.component';
 import { CourseComponent } from './course/course.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -9,6 +8,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TodoComponent } from './todo/todo.component';
 import { CrudComponent } from './crud/crud.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { UpdateComponent } from './crud/update/update.component';
 
 const routes: Routes = [
   {
@@ -18,10 +19,6 @@ const routes: Routes = [
   {
     component: CourseComponent,
     path: 'course',
-  },
-  {
-    component: CourseComponent,
-    path: 'favorite',
   },
   {
     component: AboutComponent,
@@ -46,6 +43,14 @@ const routes: Routes = [
   {
     component: CrudComponent,
     path: 'crud',
+  },
+  {
+    component: UpdateComponent,
+    path: 'crud/:id',
+  },
+  {
+    component: NotFoundComponent,
+    path: '**',
   },
 ];
 
