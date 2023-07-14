@@ -12,11 +12,13 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateComponent } from './crud/update/update.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { authGuardGuard } from './shared/auth-guard.guard';
 
 const routes: Routes = [
   {
     component: HomeComponent,
     path: '',
+    canActivate: [authGuardGuard],
   },
   {
     component: CourseComponent,

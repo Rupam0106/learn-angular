@@ -62,11 +62,8 @@
           >
             password is required.
           </div>
-          <div
-            *ngIf="form.get('password')?.errors?.['minlength']"
-            class="alert alert-danger"
-          >
-            password must be at least 4 characters long.
+          <div *ngIf="!isValid" class="alert alert-danger">
+            Email & Password is not correct.
           </div>
         </div>
       </div>
