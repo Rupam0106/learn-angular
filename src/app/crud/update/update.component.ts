@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-update',
@@ -9,8 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UpdateComponent implements OnInit {
   id: number = 0;
+  userData: any;
   form;
-  constructor(private route: ActivatedRoute, fb: FormBuilder) {
+  constructor(
+    private route: ActivatedRoute,
+    fb: FormBuilder,
+    private router:Router,
+    private post: PostService
+  ) {
     this.form = fb.group({
       validId: ['', Validators.required],
       body: ['', Validators.required],
@@ -18,11 +25,17 @@ export class UpdateComponent implements OnInit {
     });
   }
   ngOnInit() {
-    console.log(this.route.snapshot.paramMap.get('id'));
+    let id = this.route.snapshot.paramMap.get('id');
+    id &&
+      this.post.updatePost(id).subscribe((data) => {
+        console.warn(data);
+        this.userData = data;
+      });
   }
 
   onSubmit(data: any) {
     console.log(data);
+    this.router.navigate(['crud'])
   }
   get title() {
     return this.form.get('title');

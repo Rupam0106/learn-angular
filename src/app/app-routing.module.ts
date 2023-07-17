@@ -13,6 +13,7 @@ import { UpdateComponent } from './crud/update/update.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { authGuardGuard } from './shared/auth-guard.guard';
+import { ZippyComponent } from './zippy/zippy.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     component: ChangePasswordComponent,
     path: 'change-password',
+  },
+  {
+    component: ZippyComponent,
+    path: 'zippy',
   },
   {
     component: TodoComponent,

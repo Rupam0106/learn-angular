@@ -8,6 +8,7 @@
     <div class="p-2 m-2">
       <label for="id">Id</label
       ><input
+        ngModel="{{ userData?.id }}"
         type="text"
         id="validId"
         required
@@ -33,6 +34,7 @@
     <div class="p-2 m-2">
       <label for="title">Title</label
       ><input
+        ngModel="{{ userData?.title }}"
         id="title"
         type="text"
         required
@@ -58,6 +60,7 @@
     <div class="p-2 m-2">
       <label for="body">Body</label
       ><input
+        ngModel="{{ userData?.body }}"
         type="text"
         id="body"
         name="body"
