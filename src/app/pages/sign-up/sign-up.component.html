@@ -1,0 +1,60 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="30"
+    ><mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>Sign-Up</span>
+      </mat-toolbar-row></mat-toolbar
+    >
+    <form fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <mat-label>Enter your Name</mat-label>
+        <input
+          matInput
+          placeholder="Rupam Gupta"
+          [formControl]="name"
+          required
+        />
+        <mat-error *ngIf="name.invalid">{{
+          getErrorMessage("Name")
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter your Email</mat-label>
+        <input
+          matInput
+          placeholder="abc@gmail.com"
+          [formControl]="email"
+          required
+        />
+        <mat-error *ngIf="email.invalid">{{
+          getErrorMessage("email")
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter your Password</mat-label>
+        <input
+          matInput
+          placeholder="abc@123"
+          [formControl]="password"
+          required
+        />
+        <mat-error *ngIf="password.invalid">{{
+          getErrorMessage("password")
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+          required
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker> </mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+    <p>Already Have Account ? <a (click)="login()">Click Here</a></p>
+  </mat-card>
+</div>

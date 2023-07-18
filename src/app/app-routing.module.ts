@@ -14,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { authGuardGuard } from './shared/auth-guard.guard';
 import { ZippyComponent } from './zippy/zippy.component';
+import { Login1Component } from './pages/login1/login1.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -58,8 +60,12 @@ const routes: Routes = [
     path: 'crud/:id',
   },
   {
-    component: LoginComponent,
-    path: 'login',
+    component: Login1Component,
+    path: 'login1',
+  },
+  {
+    component: SignUpComponent,
+    path: 'sign-up',
   },
   {
     component: LogoutComponent,

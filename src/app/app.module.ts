@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -23,13 +22,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/post.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimations } from '@angular/platform-browser/animations';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { provideToastr } from 'ngx-toastr';
 import { ToastrModule } from 'ngx-toastr';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateComponent } from './crud/update/update.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { Login1Component } from './pages/login1/login1.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SignUpComponent } from './pages/sign-up/sign-up.component'
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +61,8 @@ import { LogoutComponent } from './pages/logout/logout.component';
     UpdateComponent,
     LoginComponent,
     LogoutComponent,
+    Login1Component,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +72,15 @@ import { LogoutComponent } from './pages/logout/logout.component';
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [PostService, provideAnimations(), provideToastr()],
   bootstrap: [AppComponent],
